@@ -2,6 +2,7 @@ package com.mindHub.waveCenter.controllers;
 
 import com.mindHub.waveCenter.DTO.ClientDTO;
 import com.mindHub.waveCenter.DTO.RegisterDTO;
+import com.mindHub.waveCenter.repositories.ClientRepository;
 import com.mindHub.waveCenter.services.AuthServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,10 @@ public class AuthController {
 
     @Autowired
     private AuthServices authServices;
+
+    @Autowired
+    private ClientRepository clientRepository;
+
     @PostMapping("/register")
     public ResponseEntity<?> register(RegisterDTO registerDTO) {
         return authServices.register(registerDTO);

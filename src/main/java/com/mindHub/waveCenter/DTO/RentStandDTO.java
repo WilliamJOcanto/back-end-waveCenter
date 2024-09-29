@@ -1,5 +1,7 @@
 //package com.mindHub.waveCenter.DTO;
 //
+//import com.mindHub.waveCenter.models.RentStand;
+//
 //import java.time.LocalDate;
 //import java.util.ArrayList;
 //import java.util.List;

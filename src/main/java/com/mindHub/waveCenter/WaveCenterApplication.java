@@ -16,8 +16,7 @@ public class WaveCenterApplication {
 	public CommandLineRunner initData(){
 
 		return args -> {
-
-			System.out.println("Hello");
+			System.out.println("Heelo");
 		};
 	}
 }

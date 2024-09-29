@@ -1,62 +1,55 @@
-package com.mindHub.waveCenter.DTO;
-
-import java.time.LocalDateTime;
-
-public class CardDTO {
-    private Long id;
-
-
-    private String ClientHolder;
-
-    private int cvv;
-    private String number;
-
-    private LocalDateTime fromDate, thruDate;
-
-    private CardType type;
-    private CardColor color;
-
-    public CardDTO(Card card) {
-        this.id = card.getId();
-        this.ClientHolder = card.getCardHolder();
-        this.number = card.getNumber();
-        this.cvv = card.getCvv();
-        this.fromDate = card.getFromDate();
-        this.thruDate = card.getThruDate();
-        this.type = card.getType();
-        this.color = card.getColor();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-
-    public String getClientHolder() {
-        return ClientHolder;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public int getCvv() {
-        return cvv;
-    }
-
-    public LocalDateTime getFromDate() {
-        return fromDate;
-    }
-
-    public LocalDateTime getThruDate() {
-        return thruDate;
-    }
-
-    public CardType getType() {
-        return type;
-    }
-
-    public CardColor getColor() {
-        return color;
-    }
-}
+//package com.mindHub.waveCenter.DTO;
+//
+//public class CardDTO {
+//    private long id;
+//
+//    private  String holderName;
+//
+//    private  String number;
+//
+//    private  String cvv;
+//
+//    private  String thruDate;
+//
+//    private  CardType type;
+//
+//    private PaymentNetworkType networkType;
+//
+//    public CardDTO(Card card) {
+//        this.id = card.getId();
+//        this.holderName = card.getHolderName();
+//        this.number = card.getNumber();
+//        this.cvv = card.getCvv();
+//        this.thruDate = card.getThruDate();
+//        this.type = card.getType();
+//        this.networkType = card.getNetworkType();
+//    }
+//
+//    public long getId() {
+//        return id;
+//    }
+//
+//    public String getHolderName() {
+//        return holderName;
+//    }
+//
+//    public String getNumber() {
+//        return number;
+//    }
+//
+//    public String getCvv() {
+//        return cvv;
+//    }
+//
+//    public String getThruDate() {
+//        return thruDate;
+//    }
+//
+//    public CardType getType() {
+//        return type;
+//    }
+//
+//    public PaymentNetworkType getNetworkType() {
+//        return networkType;
+//    }
+//}

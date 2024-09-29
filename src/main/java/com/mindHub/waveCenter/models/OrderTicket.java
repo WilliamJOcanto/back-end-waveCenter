@@ -32,6 +32,38 @@ public class OrderTicket {
         this.hashCode = hashCode;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(LocalDateTime purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getHashCode() {
+        return hashCode;
+    }
+
+    public void setHashCode(String hashCode) {
+        this.hashCode = hashCode;
+    }
+
     public Client getOwner() {
         return owner;
     }
@@ -46,5 +78,15 @@ public class OrderTicket {
 
     public void setTicket(Ticket ticket) {
         this.ticket = ticket;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderTicket{" +
+                "id=" + id +
+                ", purchaseDate=" + purchaseDate +
+                ", quantity=" + quantity +
+                ", hashCode='" + hashCode + '\'' +
+                '}';
     }
 }

@@ -26,6 +26,61 @@ public class RentStand {
     @JoinColumn(name = "stand_id")
     private Stand stand;
 
+    public RentStand() {
+    }
+
+    public RentStand(String name, String description, String hashCode, List<Integer> rentedPositions, LocalDateTime rentDate) {
+        this.name = name;
+        this.description = description;
+        this.hashCode = hashCode;
+        this.rentedPositions = rentedPositions;
+        this.rentDate = rentDate;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getHashCode() {
+        return hashCode;
+    }
+
+    public void setHashCode(String hashCode) {
+        this.hashCode = hashCode;
+    }
+
+    public List<Integer> getRentedPositions() {
+        return rentedPositions;
+    }
+
+    public void setRentedPositions(List<Integer> rentedPositions) {
+        this.rentedPositions = rentedPositions;
+    }
+
+    public LocalDateTime getRentDate() {
+        return rentDate;
+    }
+
+    public void setRentDate(LocalDateTime rentDate) {
+        this.rentDate = rentDate;
+    }
+
     public Client getOwner() {
         return owner;
     }
@@ -40,5 +95,17 @@ public class RentStand {
 
     public void setStand(Stand stand) {
         this.stand = stand;
+    }
+
+    @Override
+    public String toString() {
+        return "RentStand{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", hashCode='" + hashCode + '\'' +
+                ", rentedPositions=" + rentedPositions +
+                ", rentDate=" + rentDate +
+                '}';
     }
 }

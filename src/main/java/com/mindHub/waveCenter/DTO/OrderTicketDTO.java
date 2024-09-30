@@ -1,43 +1,41 @@
 package com.mindHub.waveCenter.DTO;
 
-import java.time.LocalDate;
+import com.mindHub.waveCenter.models.Client;
+import com.mindHub.waveCenter.models.OrderTicket;
+import com.mindHub.waveCenter.models.Ticket;
+
+import java.time.LocalDateTime;
 
 public class OrderTicketDTO {
 
     private long id;
-
-    private LocalDate purchaseDate;
-    private String name;
+    private LocalDateTime purchaseDate;
     private int quantity;
-    private double price;
+
+    private String hashCode;
 
     public OrderTicketDTO(OrderTicket orderTicket) {
         this.id = orderTicket.getId();
         this.purchaseDate = orderTicket.getPurchaseDate();
-        this.name = orderTicket.getName();
         this.quantity = orderTicket.getQuantity();
-        this.price = orderTicket.getPrice();
+        this.hashCode = orderTicket.getHashCode();
     }
 
     public long getId() {
         return id;
     }
 
-    public LocalDate getPurchaseDate() {
+    public LocalDateTime getPurchaseDate() {
         return purchaseDate;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public double getPrice() {
-        return price;
+    public String getHashCode() {
+        return hashCode;
     }
-}
+
 
 }

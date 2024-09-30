@@ -1,36 +1,28 @@
 package com.mindHub.waveCenter.DTO;
 
 import com.mindHub.waveCenter.models.Client;
-
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 
 public class ClientDTO {
     private long id;
-    private String name;
-    private String firtsName;
-    private String LastName;
-
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
 
-    private List<OrderTicketDTO> tickets = new ArrayList<>();
-
+    private List<OrderTicketDTO> orderTickets = new ArrayList<>();
     private List<RentStandDTO> rents = new ArrayList<>();
-
     private List<CardDTO> cards = new ArrayList<>();
 
-    public ClientDTO(Client client){
-
+    public ClientDTO(Client client) {
         this.id = client.getId();
-        this.name = client.getName();
-        this.firtsName = client.getFirtsName();
-        this.LastName = client.getLastName();
+        this.firstName = client.getFirstName();
+        this.lastName = client.getLastName();
         this.email = client.getEmail();
         this.password = client.getPassword();
-        this.tickets = client.getTickets().stream().map(OrderTicketDTO::new).toList();
-        this.rents = client.getRents().stream().map(RentStandDTO::new).toList();
+        this.orderTickets = client.getOrderTickets().stream().map(OrderTicketDTO::new).toList();
+        this.rents = client.getRentStand().stream().map(RentStandDTO::new).toList();
         this.cards = client.getCards().stream().map(CardDTO::new).toList();
     }
 
@@ -38,16 +30,12 @@ public class ClientDTO {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getFirtsName() {
-        return firtsName;
+    public String getFirstName() {
+        return firstName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public String getEmail() {
@@ -58,8 +46,8 @@ public class ClientDTO {
         return password;
     }
 
-    public List<OrderTicketDTO> getTickets() {
-        return tickets;
+    public List<OrderTicketDTO> getOrderTickets() {
+        return orderTickets;
     }
 
     public List<RentStandDTO> getRents() {

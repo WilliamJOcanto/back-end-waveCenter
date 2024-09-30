@@ -1,5 +1,7 @@
 package com.mindHub.waveCenter.DTO;
 
+import com.mindHub.waveCenter.models.Place;
+
 import java.util.ArrayList;
 import java.util.List;
 

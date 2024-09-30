@@ -10,7 +10,6 @@ public class OrderTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     private LocalDateTime purchaseDate;
     private int quantity;
     private String hashCode;

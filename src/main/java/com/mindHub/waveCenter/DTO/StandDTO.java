@@ -1,44 +1,37 @@
 package com.mindHub.waveCenter.DTO;
 
-import java.util.ArrayList;
+import com.mindHub.waveCenter.models.Stand;
 import java.util.List;
 
 public class StandDTO {
+
     private long id;
-
-    private  double price;
-
-    private String location;
-
+    private List<Integer> locations;
     private String size;
-
-    private List<RentStandDTO> stands = new ArrayList<>();
+    private double price;
 
     public StandDTO(Stand stand) {
         this.id = stand.getId();
-        this.price = stand.getPrice();
-        this.location = stand.getLocation();
+        this.locations = stand.getLocations();
         this.size = stand.getSize();
-        this.stands = stand.getStands().stream().map(RentStandDTO::new).toList();
+        this.price = stand.getPrice();
     }
 
     public long getId() {
         return id;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public String getLocation() {
-        return location;
+    public List<Integer> getLocations() {
+        return locations;
     }
 
     public String getSize() {
         return size;
     }
 
-    public List<RentStandDTO> getStands() {
-        return stands;
+    public double getPrice() {
+        return price;
     }
+
+
 }

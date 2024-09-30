@@ -1,66 +1,70 @@
-//package com.mindHub.waveCenter.DTO;
-//
-//import java.time.LocalDate;
-//import java.util.ArrayList;
-//import java.util.Date;
-//import java.util.List;
-//
-//public class EventDTO {
-//
-//    private long id;
-//    private String name;
-//    private String description;
-//
-//    private LocalDate date;
-//    private double ticketsPrice;
-//
-//    private List<StandDTO> stands = new ArrayList<>();
-//
-//    private List<TicketDTO> tickets = new ArrayList<>();
-//
-//    private List<String> images = new ArrayList<>();
-//
-//
-//    public EventDTO(Event event) {
-//        this.id = event.getId();
-//        this.name = event.getName();
-//        this.description = event.getDescription();
-//        this.date = event.getDate();
-//        this.ticketsPrice = event.getTicketsPrice();
-//        this.stands = event.getStands();
-//        this.tickets = event.getTickets();
-//        this.images = event.getImages();
-//    }
-//
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    public LocalDate getDate() {
-//        return date;
-//    }
-//
-//    public double getTicketsPrice() {
-//        return ticketsPrice;
-//    }
-//
-//    public List<StandDTO> getStands() {
-//        return stands;
-//    }
-//
-//    public List<TicketDTO> getTickets() {
-//        return tickets;
-//    }
-//
-//    public List<String> getImages() {
-//        return images;
-//    }
-//}
+package com.mindHub.waveCenter.DTO;
+
+import com.mindHub.waveCenter.models.Event;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EventDTO {
+
+    private long id;
+    private String name;
+    private String description;
+    private LocalDate date;
+    private double ticketPrice;
+    private PlaceDTO place;
+
+    private List<String> images = new ArrayList<>();
+    private List<StandDTO> stands = new ArrayList<>();
+    private List<TicketDTO> tickets = new ArrayList<>();
+
+    public EventDTO(Event event) {
+        this.id = event.getId();
+        this.name = event.getName();
+        this.description = event.getDescription();
+        this.date = event.getDate();
+        this.ticketPrice = event.getTicketPrice();
+        this.place = new PlaceDTO(event.getPlace()); // Convertir Place a PlaceDTO
+
+        this.images = event.getEventImages();
+        this.stands = event.getStands().stream().map(StandDTO::new).toList();
+        this.tickets = event.getTickets().stream().map(TicketDTO::new).toList();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public double getTicketPrice() {
+        return ticketPrice;
+    }
+
+    public PlaceDTO getPlace() {
+        return place;
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public List<StandDTO> getStands() {
+        return stands;
+    }
+
+    public List<TicketDTO> getTickets() {
+        return tickets;
+    }
+}

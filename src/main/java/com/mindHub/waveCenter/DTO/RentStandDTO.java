@@ -1,63 +1,59 @@
-//package com.mindHub.waveCenter.DTO;
-//
-//import com.mindHub.waveCenter.models.RentStand;
-//
-//import java.time.LocalDate;
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class RentStandDTO {
-//    private long id;
-//
-//    private String description;
-//
-//    private String name;
-//
-//    private String hashCode;
-//
-//    private List<StandDTO> stands = new ArrayList<>()>;
-//
-//    private LocalDate renDate;
-//
-////    private LocalDate devDate;
-////
-////    private double price;
-////
-////    private List<TicketDTO> tickets = new ArrayList<>()>;
-//
-//    public RentStandDTO(RentStand rentStand) {
-//        this.id = rentStand.getId();
-//        this.description = rentStand.getDescription();
-//        this.name = rentStand.getName();
-//        this.hashCode = rentStand.getHashCode();
-//        this.stands = rentStand.getStands().stream().map(StandDTO::new).toList();
-//        this.renDate = rentStand.getRenDate();
-//        this.devDate = rentStand.getDevDate();
-//        this.price = rentStand.getPrice();
-//        this.tickets = rentStand.getTickets().stream().map(TicketDTO::new).toList();
-//    }
-//
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public String getDescription() {
-//        return description;
-//    }
-//
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public String getHashCode() {
-//        return hashCode;
-//    }
-//
-//    public List<StandDTO> getStands() {
-//        return stands;
-//    }
-//
-//    public LocalDate getRenDate() {
-//        return renDate;
-//    }
-//}
+package com.mindHub.waveCenter.DTO;
+
+import com.mindHub.waveCenter.models.Client;
+import com.mindHub.waveCenter.models.RentStand;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+public class RentStandDTO {
+    private long id;
+    private String name;
+    private String description;
+    private String hashCode;
+    private List<Integer> rentedPositions;
+
+    private LocalDateTime renDate;
+
+    private List<StandDTO> stands = new ArrayList<>();
+
+
+    public RentStandDTO(RentStand rentStand) {
+        this.id = rentStand.getId();
+        this.name = rentStand.getName();
+        this.description = rentStand.getDescription();
+        this.hashCode = rentStand.getHashCode();
+        this.rentedPositions = rentStand.getRentedPositions();
+        this.renDate = rentStand.getRentDate();
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getHashCode() {
+        return hashCode;
+    }
+
+    public List<Integer> getRentedPositions() {
+        return rentedPositions;
+    }
+
+    public LocalDateTime getRenDate() {
+        return renDate;
+    }
+
+    public List<StandDTO> getStands() {
+        return stands;
+    }
+}

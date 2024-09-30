@@ -1,6 +1,7 @@
 package com.mindHub.waveCenter.controllers;
 
 import com.mindHub.waveCenter.DTO.ClientDTO;
+import com.mindHub.waveCenter.DTO.LoginDTO;
 import com.mindHub.waveCenter.DTO.RegisterDTO;
 import com.mindHub.waveCenter.repositories.ClientRepository;
 import com.mindHub.waveCenter.services.AuthServices;
@@ -20,6 +21,11 @@ public class AuthController {
     @Autowired
     private ClientRepository clientRepository;
 
+
+    @PostMapping("/login")
+    public ResponseEntity<?> register(@RequestBody LoginDTO loginDTO) {
+        return authServices.login(loginDTO);
+    }
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterDTO registerDTO) {
         return authServices.register(registerDTO);

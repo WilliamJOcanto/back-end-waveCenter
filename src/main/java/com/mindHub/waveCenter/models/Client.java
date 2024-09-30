@@ -2,6 +2,7 @@ package com.mindHub.waveCenter.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,13 +18,13 @@ public class Client {
     private String password;
 
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
-    private List<OrderTicket> orderTickets;
+    private List<OrderTicket> orderTickets = new ArrayList<>();
 
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
-    private List<RentStand> rentStand;
+    private List<RentStand> rentStand = new ArrayList<>();
 
     @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
-    private List<Cards> cards;
+    private List<Cards> cards = new ArrayList<>();
 
     public Client() {
     }

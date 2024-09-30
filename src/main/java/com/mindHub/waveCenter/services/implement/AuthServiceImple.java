@@ -25,7 +25,6 @@ public class AuthServiceImple implements AuthServices {
 
     @Override
     public ResponseEntity<?> register(RegisterDTO registerDTO) {
-
         clientRepository.save(new Client(registerDTO.firstName(), registerDTO.lastName(), registerDTO.email(), passwordEncoder.encode(registerDTO.password())));
         return ResponseEntity.ok("ok");
     }

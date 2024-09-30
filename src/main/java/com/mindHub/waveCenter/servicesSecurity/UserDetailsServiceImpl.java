@@ -39,7 +39,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .password(client.getPassword())
                 .roles("CLIENT")
                 .build();
-
-
     }
 }

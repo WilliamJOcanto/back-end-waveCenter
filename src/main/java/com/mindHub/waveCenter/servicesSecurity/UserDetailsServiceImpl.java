@@ -1,6 +1,5 @@
 package com.mindHub.waveCenter.servicesSecurity;
 
-
 import com.mindHub.waveCenter.models.Client;
 import com.mindHub.waveCenter.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +21,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     //Metodo de la interfaz que estamos sobrescribiendo
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
+        //Se busca el cliente para autenticarlo
         Client client = clientRepository.findByEmail(username);
 
         if (client == null) {
-
             throw new UsernameNotFoundException(username);
         }
 

@@ -14,6 +14,7 @@ public class ClientDTO {
     private List<RentStandDTO> rents = new ArrayList<>();
     private List<CardDTO> cards = new ArrayList<>();
 
+    private String event;
     public ClientDTO(Client client) {
         this.id = client.getId();
         this.firstName = client.getFirstName();
@@ -22,6 +23,7 @@ public class ClientDTO {
         this.orderTickets = client.getOrderTickets().stream().map(OrderTicketDTO::new).toList();
         this.rents = client.getRentStand().stream().map(RentStandDTO::new).toList();
         this.cards = client.getCards().stream().map(CardDTO::new).toList();
+
     }
 
     public long getId() {

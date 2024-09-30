@@ -2,6 +2,7 @@ package com.mindHub.waveCenter.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,10 +18,10 @@ public class Place {
     private String description;
 
     @OneToMany(mappedBy = "place", fetch = FetchType.EAGER)
-    private List<Event> events;
+    private List<Event> events = new ArrayList<>();
 
     @OneToMany(mappedBy = "place", fetch = FetchType.EAGER)
-    private List<Ticket> tickets;
+    private List<Ticket> tickets = new ArrayList<>();
 
     public Place() {
     }

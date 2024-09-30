@@ -3,6 +3,7 @@ package com.mindHub.waveCenter.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -24,13 +25,14 @@ public class Ticket {
     private Place place;
 
     @OneToMany(mappedBy = "ticket", fetch = FetchType.EAGER)
-    private List<OrderTicket> orderTickets;
+    private List<OrderTicket> orderTickets = new ArrayList<>();
 
     public Ticket() {
     }
 
-    public Ticket(LocalDateTime purchaseDate) {
+    public Ticket(LocalDateTime purchaseDate, String eventName) {
         this.purchaseDate = purchaseDate;
+        this.eventName = eventName;
     }
 
     public long getId() {

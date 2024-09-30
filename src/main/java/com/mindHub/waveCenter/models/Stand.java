@@ -2,6 +2,7 @@ package com.mindHub.waveCenter.models;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,7 +19,7 @@ public class Stand {
     private double price;
 
     @OneToMany(mappedBy = "stand", fetch = FetchType.EAGER)
-    private List<RentStand> rentStands;
+    private List<RentStand> rentStands = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "event_id")

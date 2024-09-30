@@ -15,7 +15,7 @@ public class CorsConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(Arrays.asList(new String[]{"http://localhost:8080", "http://localhost:8080/h2-console"}));
+        configuration.setAllowedOrigins(Arrays.asList(new String[]{"http://localhost:8080"}));
 
         configuration.setAllowedMethods(Arrays.asList(new String[]{"GET", "POST", "PUT", "DELETE"}));
 

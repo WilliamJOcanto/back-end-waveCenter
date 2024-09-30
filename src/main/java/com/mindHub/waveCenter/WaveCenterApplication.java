@@ -1,9 +1,12 @@
 package com.mindHub.waveCenter;
 
+import com.mindHub.waveCenter.models.Client;
+import com.mindHub.waveCenter.repositories.ClientRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class WaveCenterApplication {
@@ -13,10 +16,12 @@ public class WaveCenterApplication {
 	}
 
 	@Bean
-	public CommandLineRunner initData(){
+	public CommandLineRunner initData(ClientRepository clientRepository, PasswordEncoder passwordEncoder) {
 
 		return args -> {
-			System.out.println("Heelo");
+			Client ludwing = new Client("Ludwing", "valecillos", "ludwing@gmail.com", passwordEncoder.encode("ludwing"));
+
+			clientRepository.save(ludwing);
 		};
 	}
 }

@@ -1,7 +1,7 @@
 package com.mindHub.waveCenter.servicesSecurity;
 
-
-import ch.qos.logback.core.net.server.Client;
+import com.mindHub.waveCenter.models.Client;
+import com.mindHub.waveCenter.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

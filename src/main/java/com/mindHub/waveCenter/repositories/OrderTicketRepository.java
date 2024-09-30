@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrderTicketRepository extends JpaRepository<OrderTicket, Long> {
+    boolean existsByHashCode(String hashCode);
+
 }

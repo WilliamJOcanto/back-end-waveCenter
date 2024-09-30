@@ -2,6 +2,7 @@ package com.mindHub.waveCenter;
 
 import com.mindHub.waveCenter.models.*;
 import com.mindHub.waveCenter.repositories.*;
+import com.mindHub.waveCenter.utils.GenerateHasCode;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,10 +19,10 @@ public class WaveCenterApplication {
     public static void main(String[] args) {
         SpringApplication.run(WaveCenterApplication.class, args);
     }
-
     @Bean
     public CommandLineRunner initData(ClientRepository clientRepository, CardRepository cardsRepository, EventRepository eventRepository,
-                                      OrderTicketRepository orderTicketRepository, PlaceRepository placeRepository, TicketRepository ticketRepository, PasswordEncoder passwordEncoder) {
+                                      OrderTicketRepository orderTicketRepository, PlaceRepository placeRepository, TicketRepository ticketRepository, PasswordEncoder passwordEncoder,
+                                      StandRepository standRepository, RentStandRepository rentStandRepository, GenerateHasCode generateHasCode) {
 
         return args -> {
 
@@ -55,10 +56,24 @@ public class WaveCenterApplication {
             ticketRepository.save(ticket2);
 
             // Crear orden de compra (OrderTicket)
-            OrderTicket orderTicket1 = new OrderTicket(LocalDateTime.now(), 2, "ABC123XYZ");
+            OrderTicket orderTicket1 = new OrderTicket(LocalDateTime.now(), 2, generateHasCode.generateHashCodeOrderTicket());
             ludwing.addOrderTicket(orderTicket1);
             ticket2.addOrderTicket(orderTicket1);
             orderTicketRepository.save(orderTicket1);
+
+            // Crear Stand
+            Stand beachStand = new Stand(1, Arrays.asList(101, 102), "Large", 200.00);
+            beachEvent.addStand(beachStand);
+            standRepository.save(beachStand);
+
+            // Cliente renta un stand
+            RentStand rentStand1 = new RentStand("Stand 101", "Beach VIP Stand", generateHasCode.generateHashCodeRentStand(), Arrays.asList(101), LocalDateTime.now());
+            ludwing.addRentStand(rentStand1);
+            beachStand.addRentStand(rentStand1);
+
+            // Guardar la renta del stand
+            rentStandRepository.save(rentStand1);
+
 
             System.out.println(orderTicket1.getTicket());
 

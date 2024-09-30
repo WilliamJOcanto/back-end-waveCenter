@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RentStandRepository extends JpaRepository<RentStand, Long> {
+    boolean existsByHashCode(String hashCode);
+
 }

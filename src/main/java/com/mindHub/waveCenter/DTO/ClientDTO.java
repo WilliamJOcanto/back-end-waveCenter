@@ -9,7 +9,6 @@ public class ClientDTO {
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
 
     private List<OrderTicketDTO> orderTickets = new ArrayList<>();
     private List<RentStandDTO> rents = new ArrayList<>();
@@ -20,7 +19,6 @@ public class ClientDTO {
         this.firstName = client.getFirstName();
         this.lastName = client.getLastName();
         this.email = client.getEmail();
-        this.password = client.getPassword();
         this.orderTickets = client.getOrderTickets().stream().map(OrderTicketDTO::new).toList();
         this.rents = client.getRentStand().stream().map(RentStandDTO::new).toList();
         this.cards = client.getCards().stream().map(CardDTO::new).toList();
@@ -40,10 +38,6 @@ public class ClientDTO {
 
     public String getEmail() {
         return email;
-    }
-
-    public String getPassword() {
-        return password;
     }
 
     public List<OrderTicketDTO> getOrderTickets() {

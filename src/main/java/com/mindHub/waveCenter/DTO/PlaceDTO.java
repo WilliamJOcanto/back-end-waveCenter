@@ -15,7 +15,7 @@ public class PlaceDTO {
 
     private String description;
 
-    private List<EventDTO> events = new ArrayList<>();
+//    private List<EventDTO> events = new ArrayList<>();
 
     public PlaceDTO(Place place) {
         this.id = place.getId();
@@ -23,7 +23,7 @@ public class PlaceDTO {
         this.ticketMaxCapacity = place.getTicketMaxCapacity();
         this.standMaxCapacity = place.getStandMaxCapacity();
         this.description = place.getDescription();
-        this.events = place.getEvents().stream().map(EventDTO::new).toList();
+//        this.events = place.getEvents().stream().map(EventDTO::new).toList();
     }
 
     public long getId() {
@@ -46,7 +46,4 @@ public class PlaceDTO {
         return description;
     }
 
-    public List<EventDTO> getEvents() {
-        return events;
-    }
 }

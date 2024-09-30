@@ -18,10 +18,10 @@ public class WaveCenterApplication {
     public static void main(String[] args) {
         SpringApplication.run(WaveCenterApplication.class, args);
     }
-
     @Bean
     public CommandLineRunner initData(ClientRepository clientRepository, CardRepository cardsRepository, EventRepository eventRepository,
-                                      OrderTicketRepository orderTicketRepository, PlaceRepository placeRepository, TicketRepository ticketRepository, PasswordEncoder passwordEncoder) {
+                                      OrderTicketRepository orderTicketRepository, PlaceRepository placeRepository, TicketRepository ticketRepository, PasswordEncoder passwordEncoder,
+                                      StandRepository standRepository, RentStandRepository rentStandRepository) {
 
         return args -> {
 
@@ -59,6 +59,20 @@ public class WaveCenterApplication {
             ludwing.addOrderTicket(orderTicket1);
             ticket2.addOrderTicket(orderTicket1);
             orderTicketRepository.save(orderTicket1);
+
+            // Crear Stand
+            Stand beachStand = new Stand(1, Arrays.asList(101, 102), "Large", 200.00);
+            beachEvent.addStand(beachStand);
+            standRepository.save(beachStand);
+
+            // Cliente renta un stand
+            RentStand rentStand1 = new RentStand("Stand 101", "Beach VIP Stand", "DEF456GHI", Arrays.asList(101), LocalDateTime.now());
+            ludwing.addRentStand(rentStand1);
+            beachStand.addRentStand(rentStand1);
+
+            // Guardar la renta del stand
+            rentStandRepository.save(rentStand1);
+
 
             System.out.println(orderTicket1.getTicket());
 

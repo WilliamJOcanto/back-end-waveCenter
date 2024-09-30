@@ -17,9 +17,6 @@ public class RentStandDTO {
 
     private LocalDateTime renDate;
 
-    private List<StandDTO> stands = new ArrayList<>();
-
-
     public RentStandDTO(RentStand rentStand) {
         this.id = rentStand.getId();
         this.name = rentStand.getName();
@@ -53,7 +50,4 @@ public class RentStandDTO {
         return renDate;
     }
 
-    public List<StandDTO> getStands() {
-        return stands;
-    }
 }

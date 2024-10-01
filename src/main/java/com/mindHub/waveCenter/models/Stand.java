@@ -28,8 +28,7 @@ public class Stand {
     public Stand() {
     }
 
-    public Stand(long id, List<Integer> locations, String size, double price) {
-        this.id = id;
+    public Stand(List<Integer> locations, String size, double price) {
         this.locations = locations;
         this.size = size;
         this.price = price;

@@ -5,6 +5,8 @@ import com.mindHub.waveCenter.models.OrderTicket;
 import com.mindHub.waveCenter.models.Ticket;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderTicketDTO {
 
@@ -16,13 +18,15 @@ public class OrderTicketDTO {
 
     private String event;
 
+    private long eventId;
+
     public OrderTicketDTO(OrderTicket orderTicket) {
         this.id = orderTicket.getId();
         this.purchaseDate = orderTicket.getPurchaseDate();
         this.quantity = orderTicket.getQuantity();
         this.hashCode = orderTicket.getHashCode();
         this.event = orderTicket.getTicket().getEventName();
-
+        this.eventId = orderTicket.getTicket().getEvent().getId();
     }
 
     public long getId() {
@@ -45,5 +49,7 @@ public class OrderTicketDTO {
         return hashCode;
     }
 
-
+    public long getEventId() {
+        return eventId;
+    }
 }

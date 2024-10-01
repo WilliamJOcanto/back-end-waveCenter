@@ -3,6 +3,8 @@ package com.mindHub.waveCenter.models;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class OrderTicket {
@@ -21,6 +23,7 @@ public class OrderTicket {
     @ManyToOne
     @JoinColumn(name = "ticket_id")
     private Ticket ticket;
+
 
     public OrderTicket() {
     }

@@ -5,6 +5,8 @@ import com.mindHub.waveCenter.models.OrderTicket;
 import com.mindHub.waveCenter.models.Ticket;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class OrderTicketDTO {
 

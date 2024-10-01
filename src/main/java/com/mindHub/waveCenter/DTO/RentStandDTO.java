@@ -17,6 +17,8 @@ public class RentStandDTO {
 
     private LocalDateTime renDate;
 
+    private StandDTO standDTO;
+
     public RentStandDTO(RentStand rentStand) {
         this.id = rentStand.getId();
         this.name = rentStand.getName();
@@ -24,6 +26,7 @@ public class RentStandDTO {
         this.hashCode = rentStand.getHashCode();
         this.rentedPositions = rentStand.getRentedPositions();
         this.renDate = rentStand.getRentDate();
+
     }
 
     public long getId() {

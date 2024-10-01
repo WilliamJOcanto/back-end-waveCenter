@@ -1,13 +1,14 @@
 package com.mindHub.waveCenter.DTO;
 
 import com.mindHub.waveCenter.models.Event;
+import com.mindHub.waveCenter.models.OrderTicket;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EventDTO {
-
     private long id;
     private String name;
     private String description;
@@ -19,6 +20,10 @@ public class EventDTO {
     private List<StandDTO> stands = new ArrayList<>();
     private List<TicketDTO> tickets = new ArrayList<>();
 
+    private List<String> artists = new ArrayList<>();
+
+    private int ticketsAvailable;
+
     public EventDTO(Event event) {
         this.id = event.getId();
         this.name = event.getName();
@@ -26,10 +31,15 @@ public class EventDTO {
         this.date = event.getDate();
         this.ticketPrice = event.getTicketPrice();
         this.place = new PlaceDTO(event.getPlace()); // Convertir Place a PlaceDTO
-
         this.images = event.getEventImages();
         this.stands = event.getStands().stream().map(StandDTO::new).toList();
         this.tickets = event.getTickets().stream().map(TicketDTO::new).toList();
+        this.artists = event.getArtists();
+        this.ticketsAvailable = event.getPlace().getTicketMaxCapacity() - event.getTickets()
+                .stream()
+                .flatMap(t -> t.getOrderTickets().stream())
+                .mapToInt(OrderTicket::getQuantity)
+                .sum();
     }
 
     public long getId() {
@@ -66,5 +76,13 @@ public class EventDTO {
 
     public List<TicketDTO> getTickets() {
         return tickets;
+    }
+
+    public List<String> getArtists() {
+        return artists;
+    }
+
+    public int getTicketsAvailable() {
+        return ticketsAvailable;
     }
 }

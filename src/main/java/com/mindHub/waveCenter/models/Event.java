@@ -15,6 +15,7 @@ public class Event {
 
     private String name;
     private String description;
+    private List<String> artists;
     private LocalDate date;
     private double ticketPrice;
 
@@ -35,9 +36,10 @@ public class Event {
     public Event() {
     }
 
-    public Event(String name, String description, LocalDate date, double ticketPrice, List<String> eventImages) {
+    public Event(String name, String description, List<String> artists, LocalDate date, double ticketPrice, List<String> eventImages) {
         this.name = name;
         this.description = description;
+        this.artists = artists;
         this.date = date;
         this.ticketPrice = ticketPrice;
         this.eventImages = eventImages;

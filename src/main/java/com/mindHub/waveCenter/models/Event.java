@@ -14,7 +14,10 @@ public class Event {
     private long id;
 
     private String name;
+    @Lob
+//    @Column(columnDefinition = "TEXT")
     private String description;
+
     private List<String> artists;
     private LocalDate date;
     private double ticketPrice;
@@ -108,6 +111,22 @@ public class Event {
     public void addTicket(Ticket ticket){
         this.tickets.add(ticket);
         ticket.setEvent(this);
+    }
+
+    public List<String> getArtists() {
+        return artists;
+    }
+
+    public void setArtists(List<String> artists) {
+        this.artists = artists;
+    }
+
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    public void setStands(List<Stand> stands) {
+        this.stands = stands;
     }
 
     public void addStand(Stand stand){

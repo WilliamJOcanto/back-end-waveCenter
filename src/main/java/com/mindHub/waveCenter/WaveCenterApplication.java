@@ -43,7 +43,7 @@ public class WaveCenterApplication {
             cardsRepository.save(card1);
 
             // Crear lugar (Place)
-            Place salaDeConvenciones = new Place("Sunset Beach", 5000, 200, "A beautiful beach for concerts and events.");
+            Place salaDeConvenciones = new Place("Sunset Beach", 10, 200, "A beautiful beach for concerts and events.");
             placeRepository.save(salaDeConvenciones);
 
             // Crear evento
@@ -64,7 +64,7 @@ public class WaveCenterApplication {
             orderTicketRepository.save(orderTicket1);
 
             // Crear Stand
-            Stand beachStand = new Stand(1, Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30), "Large", 200.00);
+            Stand beachStand = new Stand(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30), "Large", 200.00);
             beachEvent.addStand(beachStand);
             standRepository.save(beachStand);
 

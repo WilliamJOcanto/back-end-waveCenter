@@ -43,7 +43,7 @@ public class WebConfig {
                         HeadersConfigurer.FrameOptionsConfig::disable))
                 .authorizeHttpRequests(authorize ->
                         authorize
-                                .requestMatchers("/api/auth/login", "/api/auth/register", "/h2-console/**").permitAll()
+                                .requestMatchers("/api/auth/login", "/api/auth/register", "/h2-console/**", "/api/event/all").permitAll()
 
                                 .requestMatchers("/api/current","/api/event/all","/api/ticket/apply","/api/stand/apply").hasRole("CLIENT")
                                 .requestMatchers("/api/clients/").hasRole("ADMIN")

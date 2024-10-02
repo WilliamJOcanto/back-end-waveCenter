@@ -224,6 +224,7 @@ public class WaveCenterApplication {
             eventRepository.save(eventRockConcert);
             ticketRepository.save(ticketEventRockConcert);
 
+<<<<<<< HEAD
             Event eventReggaeFestival = new Event(
                     "Reggae Vibes Festival",
                     "A unique event that celebrates reggae music and culture in a closed space. With an intimate atmosphere, you will enjoy immersive rhythms and a positive message while you immerse yourself in the energy of live performances. Come share a night full of good vibes!",
@@ -232,6 +233,10 @@ public class WaveCenterApplication {
                     100.0,
                     Arrays.asList("./public/bReggae1.jpg", "./public/bReggae2.jpg", "./public/bReggae3.jpg", "./public/bReggae4.jpg", "./public/bReggae5.jpg")
             );
+=======
+
+            Event eventReggaeFestival = new Event("Reggae Vibes Festival", "A unique event that celebrates reggae music and culture in a closed space. With an intimate atmosphere, you will enjoy immersive rhythms and a positive message while you immerse yourself in the energy of live performances. Come share a night full of good vibes!", Arrays.asList("Tropicana Rasta (Reggae fusion)", "Roots of the Sea (Roots reggae)", "Caribbean Sound (Reggae dub)"), LocalDate.of(2024, 11, 5), 100.0, Arrays.asList("../assets/", "", "", "", ""));
+>>>>>>> 3212587827015b2dd90dee0e7c48e07c8d058321
             Ticket ticketEventReggaeFestival = new Ticket(LocalDateTime.of(2024, 11, 5, 15, 0), "Reggae Festival 2024 - Reggae Vibes Festival");
             eventReggaeFestival.addTicket(ticketEventReggaeFestival);
             pabellonMusica.addEvent(eventReggaeFestival);

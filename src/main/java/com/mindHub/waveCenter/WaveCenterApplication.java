@@ -39,7 +39,7 @@ public class WaveCenterApplication {
             Place pabellonTeatro = new Place("Drift", 40, 0, "Step into the Wave Lounge, a captivating setting for theater and conferences. Here, engaging performances and thought-provoking talks take center stage, inviting audiences to explore the depths of creativity and knowledge in an inspiring atmosphere.");
             Place pabellonConvenciones = new Place("Tide", 30, 30, "Welcome to Wave Crest, the ideal venue for conventions and gatherings. With versatile space and modern amenities, this salon is designed to accommodate a variety of events, from business meetings to expos, fostering collaboration and innovation.");
 
-            Stand smallStand = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
 
@@ -64,7 +64,7 @@ public class WaveCenterApplication {
             standRepository.save(smallStand);
             standRepository.save(bigStand);
 
-            Stand smallStand1 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand1 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand1 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             Event eventInnovatorsHaven = new Event("Innovators' Haven",
@@ -89,7 +89,7 @@ public class WaveCenterApplication {
             standRepository.save(bigStand1);
 
 
-            Stand smallStand2 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand2 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand2 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             Event eventCulturalMarket = new Event("Cultural Tides Market",
@@ -113,7 +113,7 @@ public class WaveCenterApplication {
             standRepository.save(smallStand2);
             standRepository.save(bigStand2);
 
-            Stand smallStand3 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand3 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand3 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             Event eventHeroesSummit = new Event("Heroes' Summit",
@@ -136,7 +136,7 @@ public class WaveCenterApplication {
             standRepository.save(smallStand3);
             standRepository.save(bigStand3);
 
-            Stand smallStand4 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand4 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand4 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             Event eventCulinaryFest = new Event(

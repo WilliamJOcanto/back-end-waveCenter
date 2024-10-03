@@ -39,7 +39,7 @@ public class WaveCenterApplication {
             Place pabellonTeatro = new Place("Wave Lounge", 40, 0, "Step into the Wave Lounge, a captivating setting for theater and conferences. Here, engaging performances and thought-provoking talks take center stage, inviting audiences to explore the depths of creativity and knowledge in an inspiring atmosphere.");
             Place pabellonConvenciones = new Place("Wave Crest", 30, 30, "Welcome to Wave Crest, the ideal venue for conventions and gatherings. With versatile space and modern amenities, this salon is designed to accommodate a variety of events, from business meetings to expos, fostering collaboration and innovation.");
 
-            Stand smallStand = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
 
@@ -64,7 +64,7 @@ public class WaveCenterApplication {
             standRepository.save(smallStand);
             standRepository.save(bigStand);
 
-            Stand smallStand1 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand1 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand1 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             Event eventInnovatorsHaven = new Event("Innovators' Haven",
@@ -89,7 +89,7 @@ public class WaveCenterApplication {
             standRepository.save(bigStand1);
 
 
-            Stand smallStand2 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand2 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand2 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             Event eventCulturalMarket = new Event("Cultural Tides Market",
@@ -113,7 +113,7 @@ public class WaveCenterApplication {
             standRepository.save(smallStand2);
             standRepository.save(bigStand2);
 
-            Stand smallStand3 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand3 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand3 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             Event eventHeroesSummit = new Event("Heroes' Summit",
@@ -136,7 +136,7 @@ public class WaveCenterApplication {
             standRepository.save(smallStand3);
             standRepository.save(bigStand3);
 
-            Stand smallStand4 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20), "small", 5000.0);
+            Stand smallStand4 = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand4 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             Event eventCulinaryFest = new Event(
@@ -224,7 +224,6 @@ public class WaveCenterApplication {
             eventRepository.save(eventRockConcert);
             ticketRepository.save(ticketEventRockConcert);
 
-<<<<<<< HEAD
             Event eventReggaeFestival = new Event(
                     "Reggae Vibes Festival",
                     "A unique event that celebrates reggae music and culture in a closed space. With an intimate atmosphere, you will enjoy immersive rhythms and a positive message while you immerse yourself in the energy of live performances. Come share a night full of good vibes!",
@@ -233,10 +232,7 @@ public class WaveCenterApplication {
                     100.0,
                     Arrays.asList("./public/bReggae1.jpg", "./public/bReggae2.jpg", "./public/bReggae3.jpg", "./public/bReggae4.jpg", "./public/bReggae5.jpg")
             );
-=======
 
-            Event eventReggaeFestival = new Event("Reggae Vibes Festival", "A unique event that celebrates reggae music and culture in a closed space. With an intimate atmosphere, you will enjoy immersive rhythms and a positive message while you immerse yourself in the energy of live performances. Come share a night full of good vibes!", Arrays.asList("Tropicana Rasta (Reggae fusion)", "Roots of the Sea (Roots reggae)", "Caribbean Sound (Reggae dub)"), LocalDate.of(2024, 11, 5), 100.0, Arrays.asList("../assets/", "", "", "", ""));
->>>>>>> 3212587827015b2dd90dee0e7c48e07c8d058321
             Ticket ticketEventReggaeFestival = new Ticket(LocalDateTime.of(2024, 11, 5, 15, 0), "Reggae Festival 2024 - Reggae Vibes Festival");
             eventReggaeFestival.addTicket(ticketEventReggaeFestival);
             pabellonMusica.addEvent(eventReggaeFestival);

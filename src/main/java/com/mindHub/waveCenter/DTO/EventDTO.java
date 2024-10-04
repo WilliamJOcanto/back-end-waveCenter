@@ -2,6 +2,7 @@ package com.mindHub.waveCenter.DTO;
 
 import com.mindHub.waveCenter.models.Event;
 import com.mindHub.waveCenter.models.OrderTicket;
+import com.mindHub.waveCenter.models.RentStand;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
@@ -24,6 +25,8 @@ public class EventDTO {
 
     private int ticketsAvailable;
 
+    private int standAvailable;
+
     public EventDTO(Event event) {
         this.id = event.getId();
         this.name = event.getName();
@@ -39,6 +42,11 @@ public class EventDTO {
                 .stream()
                 .flatMap(t -> t.getOrderTickets().stream())
                 .mapToInt(OrderTicket::getQuantity)
+                .sum();
+        this.standAvailable = event.getPlace().getTicketMaxCapacity() - event.getStands()
+                .stream()
+                .flatMap(t -> t.getRentStands().stream())
+                .mapToInt(rentStand -> rentStand.getRentedPositions().size()) // Contamos las posiciones alquiladas
                 .sum();
     }
 
@@ -85,4 +93,6 @@ public class EventDTO {
     public int getTicketsAvailable() {
         return ticketsAvailable;
     }
+
+    public int getStandAvailable() {return standAvailable;}
 }

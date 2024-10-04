@@ -48,9 +48,24 @@ public class StandServicesImpl implements StandServices {
 
         Client client = clientRepository.findByEmail(authentication.getName());
         Event event = eventRepository.findById(rentStandApliDTO.enventId());
+
         List<Stand> stands = event.getStands().stream()
                 .filter(stand -> stand.getLocations().stream().anyMatch(location -> rentStandApliDTO.positions().contains(location)))
                 .toList();
+
+        if(stands.size() == 1 && event.getPlace().getId() == 3){
+            Stand stand = stands.get(0);
+            stand.getLocations().removeAll(rentStandApliDTO.positions());
+
+            RentStand rentStand = new RentStand(event.getName(), " ", generateHasCode.generateHashCodeRentStand(), rentStandApliDTO.positions(), LocalDateTime.now());
+            stand.addRentStand(rentStand);
+            client.addRentStand(rentStand);
+            rentStandRepository.save(rentStand);
+            standRepository.save(stand);
+            clientRepository.save(client);
+
+            return new ResponseEntity<>(new RentStandDTO(rentStand), HttpStatus.OK);
+        }
 
         if(stands.size() == 1){
             Stand stand = stands.get(0);

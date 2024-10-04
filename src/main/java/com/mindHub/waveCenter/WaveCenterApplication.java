@@ -391,7 +391,6 @@ public class WaveCenterApplication {
             rentStandRepository.save(rentStand1);
 
             // Imprimir detalles del pedido
-            System.out.println(orderTicket1.getTicket());
 
             // Crear segundo cliente
             Client ana = new Client("Ana", "Gomez", "ana.gomez@example.com", passwordEncoder.encode("abc123"));
@@ -415,7 +414,6 @@ public class WaveCenterApplication {
             rentStandRepository.save(rentStand2);
 
             // Imprimir detalles del pedido para el segundo cliente
-            System.out.println(orderTicket2.getTicket());
 
         };
     }

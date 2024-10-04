@@ -33,6 +33,5 @@ public class EventController {
         catch (Exception e){
             return new ResponseEntity<>("Error creating event" + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
     }
 }

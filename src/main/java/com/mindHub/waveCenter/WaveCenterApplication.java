@@ -39,6 +39,7 @@ public class WaveCenterApplication {
             Place pabellonTeatro = new Place("Drift", 40, 0, "Step into the Wave Lounge, a captivating setting for theater and conferences. Here, engaging performances and thought-provoking talks take center stage, inviting audiences to explore the depths of creativity and knowledge in an inspiring atmosphere.");
             Place pabellonConvenciones = new Place("Tide", 30, 30, "Welcome to Wave Crest, the ideal venue for conventions and gatherings. With versatile space and modern amenities, this salon is designed to accommodate a variety of events, from business meetings to expos, fostering collaboration and innovation.");
 
+
             Stand smallStand = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", 5000.0);
             Stand bigStand = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
@@ -243,7 +244,6 @@ public class WaveCenterApplication {
             ticketRepository.save(ticketEventReggaeFestival);
 
 
-
             Event eventVoicesFuture = new Event(
                     "Voices of the Future",
                     "A series of talks that addresses social innovation, the environment and cultural activism. Visionary speakers will share their projects and movements that are transforming the world, inspiring attendees to be part of the change.",
@@ -253,12 +253,15 @@ public class WaveCenterApplication {
                     Arrays.asList("https://i.imgur.com/34pCyWf.jpeg", "https://i.imgur.com/8mxW3ky.jpeg", "https://i.imgur.com/UmIoF18.jpeg", "https://i.imgur.com/3F4rt8G.jpeg", "https://i.imgur.com/DP07TlH.jpeg")
             );
             Ticket ticketEventVoicesFuture = new Ticket(LocalDateTime.of(2024, 12, 5, 15, 0), "Voices of the Future Conference 2024");
+            Stand stand1 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventVoicesFuture.getTicketPrice());
             eventVoicesFuture.addTicket(ticketEventVoicesFuture);
+            eventVoicesFuture.addStand(stand1);
             pabellonTeatro.addEvent(eventVoicesFuture);
             pabellonTeatro.addTicket(ticketEventVoicesFuture);
             placeRepository.save(pabellonTeatro);
             eventRepository.save(eventVoicesFuture);
             ticketRepository.save(ticketEventVoicesFuture);
+            standRepository.save(stand1);
 
 
             Event eventArtStorytelling = new Event(
@@ -270,12 +273,15 @@ public class WaveCenterApplication {
                     Arrays.asList("https://i.imgur.com/gM9MHXM.jpeg", "https://i.imgur.com/0cyJSyN.jpeg", "https://i.imgur.com/fCKxGVI.jpeg", "https://i.imgur.com/AQD2jkc.jpeg", "https://i.imgur.com/EzCLbXd.jpeg")
             );
             Ticket ticketEventArtStorytelling = new Ticket(LocalDateTime.of(2024, 12, 6, 15, 0), "Art Conference 2024 - The Art of Storytelling");
+            Stand stand2 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventArtStorytelling.getTicketPrice());
             eventArtStorytelling.addTicket(ticketEventArtStorytelling);
+            eventArtStorytelling.addStand(stand2);
             pabellonTeatro.addEvent(eventArtStorytelling);
             pabellonTeatro.addTicket(ticketEventArtStorytelling);
             placeRepository.save(pabellonTeatro);
             eventRepository.save(eventArtStorytelling);
             ticketRepository.save(ticketEventArtStorytelling);
+            standRepository.save(stand2);
 
 
             Event eventCurrentsTalks = new Event(
@@ -288,12 +294,15 @@ public class WaveCenterApplication {
             );
 
             Ticket ticketEventCurrentsTalks = new Ticket(LocalDateTime.of(2024, 12, 7, 15, 0), "Tech & Art Conference 2024 - Cultural Currents Talks");
+            Stand stand3 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventCurrentsTalks.getTicketPrice());
             eventCurrentsTalks.addTicket(ticketEventCurrentsTalks);
+            eventCurrentsTalks.addStand(stand3);
             pabellonTeatro.addEvent(eventCurrentsTalks);
             pabellonTeatro.addTicket(ticketEventCurrentsTalks);
             placeRepository.save(pabellonTeatro);
             eventRepository.save(eventCurrentsTalks);
             ticketRepository.save(ticketEventCurrentsTalks);
+            standRepository.save(stand3);
 
 
             Event eventMoonlitShow = new Event(
@@ -305,13 +314,15 @@ public class WaveCenterApplication {
                     Arrays.asList("https://i.imgur.com/SpYpKI0.jpeg", "https://i.imgur.com/X4hzUJ0.jpeg", "https://i.imgur.com/RSln6xk.jpeg", "https://i.imgur.com/V2XmC5A.jpeg", "https://i.imgur.com/kq62r5U.jpeg")
             );
             Ticket ticketEventMoonlitShow = new Ticket(LocalDateTime.of(2024, 12, 8, 15, 0), "Theater performances - The Moonlit Show");
+            Stand stand4 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventMoonlitShow.getTicketPrice());
             eventMoonlitShow.addTicket(ticketEventMoonlitShow);
+            eventMoonlitShow.addStand(stand4);
             pabellonTeatro.addEvent(eventMoonlitShow);
             pabellonTeatro.addTicket(ticketEventMoonlitShow);
             placeRepository.save(pabellonTeatro);
             eventRepository.save(eventMoonlitShow);
             ticketRepository.save(ticketEventMoonlitShow);
-
+            standRepository.save(stand4);
 
 
             Event eventSymphonyWaves = new Event(
@@ -323,14 +334,19 @@ public class WaveCenterApplication {
                     Arrays.asList("https://i.imgur.com/bK2LR4N.jpeg", "https://i.imgur.com/1PZNqe4.jpeg", "https://i.imgur.com/jxZLIdW.jpeg", "https://i.imgur.com/lGC5NLt.jpeg", "https://i.imgur.com/9Gk39MP.jpeg")
             );
             Ticket ticketEventSymphonyWaves = new Ticket(LocalDateTime.of(2024, 12, 9, 15, 0), "Symphony of the Waves 2024");
+            Stand stand5 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventSymphonyWaves.getTicketPrice());
             eventSymphonyWaves.addTicket(ticketEventSymphonyWaves);
+            eventSymphonyWaves.addStand(stand5);
             pabellonTeatro.addEvent(eventSymphonyWaves);
             pabellonTeatro.addTicket(ticketEventSymphonyWaves);
             placeRepository.save(pabellonTeatro);
             eventRepository.save(eventSymphonyWaves);
             ticketRepository.save(ticketEventSymphonyWaves);
+            standRepository.save(stand5);
 
-
+            System.out.println(pabellonMusica);
+            System.out.println(pabellonTeatro);
+            System.out.println(pabellonConvenciones);
 
             // Crear primer cliente
             Client ludwing = new Client("Ludwing", "Valecillos", "ludwingval@gmail.com", passwordEncoder.encode("123"));

@@ -18,15 +18,22 @@ public class EventController {
     private EventServices eventServices;
     @GetMapping("/all")
     public ResponseEntity<?> getEvents(Authentication authentication) {
-        return eventServices.getAllEvents();
+        try{
+            return eventServices.getAllEvents();
+        }catch (Exception e){
+            return new ResponseEntity<>("Error finding all events" + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
     @GetMapping("/{id}")
     public ResponseEntity<?> getEventById(@PathVariable Long id){
-        return eventServices.getEventDtoById(id);
+        try{
+            return eventServices.getEventDtoById(id);
+        }catch (Exception e){
+            return new ResponseEntity<>("Error finding event by id" + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
     @PostMapping("/create")
     public ResponseEntity<?> createNewEvent(@RequestBody CreateEventDTO createEventDTO, Authentication authentication){
-
         try{
             return eventServices.makeNewEvent(createEventDTO);
         }

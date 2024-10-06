@@ -36,7 +36,7 @@ public class WaveCenterApplication {
         return args -> {
 
             Place pabellonMusica = new Place("Crest", 40, 0, "Dive into the rhythm at The Tidal Beat, where vibrant music events come alive. This energetic space hosts everything from intimate concerts to electrifying performances, making it the perfect venue for music lovers to experience unforgettable moments.");
-            Place pabellonTeatro = new Place("Drift", 40, 0, "Step into the Wave Lounge, a captivating setting for theater and conferences. Here, engaging performances and thought-provoking talks take center stage, inviting audiences to explore the depths of creativity and knowledge in an inspiring atmosphere.");
+            Place pabellonTeatro = new Place("Drift", 52, 0, "Step into the Wave Lounge, a captivating setting for theater and conferences. Here, engaging performances and thought-provoking talks take center stage, inviting audiences to explore the depths of creativity and knowledge in an inspiring atmosphere.");
             Place pabellonConvenciones = new Place("Tide", 30, 30, "Welcome to Wave Crest, the ideal venue for conventions and gatherings. With versatile space and modern amenities, this salon is designed to accommodate a variety of events, from business meetings to expos, fostering collaboration and innovation.");
 
 
@@ -50,7 +50,7 @@ public class WaveCenterApplication {
                             "Diego Ruiz - Sculptor who works with recycled materials, creating unique and sustainable works.",
                             "Valeria Gómez - Digital illustrator who combines traditional and digital techniques to tell visual stories."),
                     LocalDate.of(2024, 11, 6),
-                    1000.0,
+                    3000.0,
                     Arrays.asList("https://i.imgur.com/TjlqJvA.jpeg", "https://i.imgur.com/i7LL2Wx.jpeg", "https://i.imgur.com/4KZz2pS.png", "https://i.imgur.com/W9gKqwm.png", "https://i.imgur.com/TuV7Aqh.jpeg"));
 
             Ticket ticketEventCreativeCurrent = new Ticket(LocalDateTime.of(2024, 11, 6, 15, 0), "Expo Art 2024 - The Creative Current");
@@ -74,7 +74,7 @@ public class WaveCenterApplication {
                             "EcoArt Collective - Sustainable design projects using recycled materials.",
                             "Interactivity Lab - Interactive experiences that combine digital art and technology."),
                     LocalDate.of(2024, 11, 7),
-                    1000.0,
+                    3000.0,
                     Arrays.asList("https://i.imgur.com/bvg2B9O.jpeg", "https://i.imgur.com/QiuX9ak.jpeg", "https://i.imgur.com/UcQ1nGl.jpeg", "https://i.imgur.com/wyCN8wn.jpeg", "https://i.imgur.com/tlCcCsC.jpeg"));
 
             Ticket ticketEventInnovatorsHaven = new Ticket(LocalDateTime.of(2024, 11, 7, 15, 0), "Tech Expo 2024 - Innovators' Haven");
@@ -99,7 +99,7 @@ public class WaveCenterApplication {
                             "Urban Art Collective - Artists presenting live murals and street art.",
                             "EcoFashion Lab - Independent fashion designers using sustainable materials."),
                     LocalDate.of(2024, 11, 8),
-                    1000.0,
+                    3000.0,
                     Arrays.asList("https://i.imgur.com/zuGysjd.jpeg", "https://i.imgur.com/YlVM9Ed.jpeg", "https://i.imgur.com/3KtyVRd.jpeg", "https://i.imgur.com/bJDR8JN.jpeg", "https://i.imgur.com/MPSJ5oF.jpeg"));
 
             Ticket ticketEventCulturalMarket = new Ticket(LocalDateTime.of(2024, 11, 8, 15, 0), "Cultural Tides Market 2024");
@@ -123,7 +123,7 @@ public class WaveCenterApplication {
                             "Clara Ramos - Voice actress famous for her roles in animated series.",
                             "Team GamerPro - Content creators who will present their latest games and virtual reality technology."),
                     LocalDate.of(2024, 11, 9),
-                    1000.0,
+                    3500.0,
                     Arrays.asList("https://i.imgur.com/erGiRxu.png", "https://i.imgur.com/4Az6hH2.jpeg", "https://i.imgur.com/G2Jsmr9.jpeg", "https://i.imgur.com/9ndEY9t.jpeg"));
             Ticket ticketHeroesSummit = new Ticket(LocalDateTime.of(2024, 11, 9, 15, 0), "Comic Convention 2024 - Heroes' Summit");
             eventHeroesSummit.addTicket(ticketHeroesSummit);
@@ -145,7 +145,7 @@ public class WaveCenterApplication {
                     "A gastronomic tour that celebrates delicious regional and local food. With chef stands offering traditional dishes, fresh seafood and delicious fusion cuisine, this event is a feast for the senses. Attendees will be able to sample products from local farms and participate in cooking workshops to learn new techniques.",
                     Arrays.asList("María López - Specialist in traditional coastal cuisine.", "Carlos Méndez - Chef recognized for his innovative fusion cuisine.", "Elena Torres - Expert in fresh and sustainable seafood."),
                     LocalDate.of(2024, 11, 10),
-                    1000.0,
+                    3500.0,
                     Arrays.asList("https://i.imgur.com/4sSF4V4.jpeg", "https://i.imgur.com/KCDvciN.jpeg", "https://i.imgur.com/3chQRmY.jpeg", "https://i.imgur.com/O5BQGVB.jpeg", "https://i.imgur.com/uXZ3Rbx.jpeg")
             );
             Ticket ticketCulinaryFest = new Ticket(LocalDateTime.of(2024, 11, 10, 15, 0), "Culinary Convention 2024 - Coastal Culinary Fest");
@@ -166,7 +166,7 @@ public class WaveCenterApplication {
                     "An independent music festival where each artist brings their unique style, from folk and jazz to electronic music.",
                     Arrays.asList("Luna Waves (Indie Folk)", "The Electric Ocean (Synthwave/Electronic)", "Soul Drifters (Jazz Fusion)", "Desert Echo (Acoustic Rock)"),
                     LocalDate.of(2024, 11, 1),
-                    1000.0,
+                    1500.0,
                     Arrays.asList("https://i.imgur.com/F032qDA.jpeg", "https://i.imgur.com/JqkFquU.jpeg", "https://i.imgur.com/UgeEgLy.jpeg", "https://i.imgur.com/KsWyme2.jpeg", "https://i.imgur.com/JzDj7CJ.jpeg")
             );
             Ticket ticketEventJazz = new Ticket(LocalDateTime.of(2024, 11, 1, 15, 0), "Jazz Festival 2024 - Rhythms of the Tides");
@@ -182,7 +182,7 @@ public class WaveCenterApplication {
                     "Enjoy an intimate acoustic evening featuring soulful performances from genres including folk, indie and soft rock. Experience the raw emotion and authenticity of each artist as they create memorable connections through their music.",
                     Arrays.asList("Astral Strings (Indie Acoustic)", "Golden Horizon (Alternative Folk)", "Sunset Reverie (Acoustic Dream Pop)"),
                     LocalDate.of(2024, 11, 2),
-                    1000.0,
+                    1500.0,
                     Arrays.asList("https://i.imgur.com/z86GIhJ.jpeg", "https://i.imgur.com/jZbPtSh.jpeg", "https://i.imgur.com/5IU2X4k.jpeg", "https://i.imgur.com/6I2f4WE.jpeg", "https://i.imgur.com/RbtShDU.jpeg")
             );
             Ticket ticketEventUnplugged = new Ticket(LocalDateTime.of(2024, 11, 2, 15, 0), "Unplugged Sessions 2024 - Echoes Unplugged");
@@ -198,7 +198,7 @@ public class WaveCenterApplication {
                     "Immerse yourself in a night of eclectic sounds, with experimental and lo-fi music. Discover innovative bands that combine ambient textures with nostalgic vibes, creating a unique atmosphere that celebrates creativity and spontaneity. Enjoy this unforgettable musical experience!",
                     Arrays.asList("Cosmic Tones (Experimental Electronics)", "Wave Ritual (Psychedelic Post-Rock)", "Deep Blue Noise (Shoegaze/Noise Pop)"),
                     LocalDate.of(2024, 11, 3),
-                    1000.0,
+                    1500.0,
                     Arrays.asList("https://i.imgur.com/J9eCZeW.jpeg", "https://i.imgur.com/9jXzapk.jpeg", "https://i.imgur.com/IwQ6or7.jpeg", "https://i.imgur.com/6DgC2Up.jpeg", "https://i.imgur.com/cTjDdKT.jpeg")
             );
             Ticket ticketEventBeatFest = new Ticket(LocalDateTime.of(2024, 11, 3, 15, 0), "Tidal Fest 2024 - Tidal Beat Fest");
@@ -214,7 +214,7 @@ public class WaveCenterApplication {
                     "A rock concert that brings together the best local and national bands on an open-air stage, overlooking the sea. No distractions, just the energy of rock in its purest form, where the public can enjoy great classics and new musical proposals.",
                     Arrays.asList("Marea Verde (Alternative Rock)", "The Sonics (Classic Rock)", "Breakup (Hard rock)"),
                     LocalDate.of(2024, 11, 4),
-                    100.0,
+                    1500.0,
                     Arrays.asList("https://i.imgur.com/B8iCgZj.jpeg", "https://i.imgur.com/4k5NGxo.jpeg", "https://i.imgur.com/kW8A8xR.jpeg", "https://i.imgur.com/eIJbg0X.jpeg", "https://i.imgur.com/bFupahR.jpeg")
             );
             Ticket ticketEventRockConcert = new Ticket(LocalDateTime.of(2024, 11, 4, 15, 0), "Rock Festival 2014 - Rock Tide Concert");
@@ -231,7 +231,7 @@ public class WaveCenterApplication {
                     "A unique event that celebrates reggae music and culture in a closed space. With an intimate atmosphere, you will enjoy immersive rhythms and a positive message while you immerse yourself in the energy of live performances. Come share a night full of good vibes!",
                     Arrays.asList("Tropicana Rasta (Reggae fusion)", "Roots of the Sea (Roots reggae)", "Caribbean Sound (Reggae dub)"),
                     LocalDate.of(2024, 11, 5),
-                    100.0,
+                    1500.0,
                     Arrays.asList("https://i.imgur.com/ymZjpuj.jpeg", "https://i.imgur.com/iTNv2vS.jpeg", "https://i.imgur.com/tMVqv1a.jpeg", "https://i.imgur.com/VNnQ4eX.jpeg", "https://i.imgur.com/sn9Rx8b.jpeg")
             );
 
@@ -249,11 +249,11 @@ public class WaveCenterApplication {
                     "A series of talks that addresses social innovation, the environment and cultural activism. Visionary speakers will share their projects and movements that are transforming the world, inspiring attendees to be part of the change.",
                     Arrays.asList("Sofía García - Environmental activist and founder of a conservation organization.", "Luis Fernández - Social innovator focused on sustainable communities."),
                     LocalDate.of(2024, 12, 5),
-                    1000.0,
+                    2000.0,
                     Arrays.asList("https://i.imgur.com/34pCyWf.jpeg", "https://i.imgur.com/8mxW3ky.jpeg", "https://i.imgur.com/UmIoF18.jpeg", "https://i.imgur.com/3F4rt8G.jpeg", "https://i.imgur.com/DP07TlH.jpeg")
             );
             Ticket ticketEventVoicesFuture = new Ticket(LocalDateTime.of(2024, 12, 5, 15, 0), "Voices of the Future Conference 2024");
-            Stand stand1 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventVoicesFuture.getTicketPrice());
+            Stand stand1 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30, 31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50), "small", eventVoicesFuture.getTicketPrice());
             eventVoicesFuture.addTicket(ticketEventVoicesFuture);
             eventVoicesFuture.addStand(stand1);
             pabellonTeatro.addEvent(eventVoicesFuture);
@@ -269,11 +269,11 @@ public class WaveCenterApplication {
                     "An event dedicated to the art of storytelling. Storytellers, writers and poets will take the stage to share unique stories that will captivate and inspire the audience. Enjoy a magical night full of emotions, imagination and the powerful connection that only a good story can offer.",
                     Arrays.asList("Javier Ríos - Storyteller known for his captivating fables.", "Ana Beltrán - Poet whose words evoke deep emotions.", "Diego Martínez - Writer of short stories that challenge reality."),
                     LocalDate.of(2024, 12, 6),
-                    1000.0,
+                    2000.0,
                     Arrays.asList("https://i.imgur.com/gM9MHXM.jpeg", "https://i.imgur.com/0cyJSyN.jpeg", "https://i.imgur.com/fCKxGVI.jpeg", "https://i.imgur.com/AQD2jkc.jpeg", "https://i.imgur.com/EzCLbXd.jpeg")
             );
             Ticket ticketEventArtStorytelling = new Ticket(LocalDateTime.of(2024, 12, 6, 15, 0), "Art Conference 2024 - The Art of Storytelling");
-            Stand stand2 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventArtStorytelling.getTicketPrice());
+            Stand stand2 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30, 31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50), "small", eventArtStorytelling.getTicketPrice());
             eventArtStorytelling.addTicket(ticketEventArtStorytelling);
             eventArtStorytelling.addStand(stand2);
             pabellonTeatro.addEvent(eventArtStorytelling);
@@ -289,12 +289,12 @@ public class WaveCenterApplication {
                     "A series of inspiring talks that explore the intersection of technology and art. Discover how new digital tools are transforming the creative process, offering new possibilities to artists and creators.",
                     Arrays.asList("María Ruiz - Digital artist who uses augmented reality in her works.", "Tomás Herrera - Graphic designer focused on the fusion of art and technology.", "Elena Soto - Expert in creative tools and their impact on artistic production."),
                     LocalDate.of(2024, 12, 7),
-                    1000.0,
+                    2000.0,
                     Arrays.asList("https://i.imgur.com/VwlVz46.jpeg", "https://i.imgur.com/bAKwSjE.jpeg", "https://i.imgur.com/tAHp1ZY.jpeg", "https://i.imgur.com/JWL9GTR.jpeg", "https://i.imgur.com/QaF7KeF.jpeg")
             );
 
             Ticket ticketEventCurrentsTalks = new Ticket(LocalDateTime.of(2024, 12, 7, 15, 0), "Tech & Art Conference 2024 - Cultural Currents Talks");
-            Stand stand3 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventCurrentsTalks.getTicketPrice());
+            Stand stand3 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30, 31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50), "small", eventCurrentsTalks.getTicketPrice());
             eventCurrentsTalks.addTicket(ticketEventCurrentsTalks);
             eventCurrentsTalks.addStand(stand3);
             pabellonTeatro.addEvent(eventCurrentsTalks);
@@ -310,11 +310,11 @@ public class WaveCenterApplication {
                     "A series of nighttime performances at Wave Crest that combine shadow theater with artistic lighting, creating a magical atmosphere. This event is ideal for special cultural nights, offering a unique experience that transports the public to a world of fantasy and creativity.",
                     Arrays.asList("Sombra Mística Company - Masters of shadow theater with captivating narratives.", "Light and Fantasy - Artists creating dazzling lighting shows.", "Eclectic Theater Cast - Group that fuses dance and theater in their performances."),
                     LocalDate.of(2024, 12, 8),
-                    1000.0,
+                    2000.0,
                     Arrays.asList("https://i.imgur.com/SpYpKI0.jpeg", "https://i.imgur.com/X4hzUJ0.jpeg", "https://i.imgur.com/RSln6xk.jpeg", "https://i.imgur.com/V2XmC5A.jpeg", "https://i.imgur.com/kq62r5U.jpeg")
             );
             Ticket ticketEventMoonlitShow = new Ticket(LocalDateTime.of(2024, 12, 8, 15, 0), "Theater performances - The Moonlit Show");
-            Stand stand4 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventMoonlitShow.getTicketPrice());
+            Stand stand4 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30, 31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50), "small", eventMoonlitShow.getTicketPrice());
             eventMoonlitShow.addTicket(ticketEventMoonlitShow);
             eventMoonlitShow.addStand(stand4);
             pabellonTeatro.addEvent(eventMoonlitShow);
@@ -330,11 +330,11 @@ public class WaveCenterApplication {
                     "An elegant concert of classical and orchestral music in an exquisite hall with numbered seats. Attendees will be able to delight in a selection of pieces performed by a talented local philharmonic orchestra, ranging from classical compositions to captivating contemporary soundtracks.",
                     Arrays.asList("Filarmónica del Mar - Known for its versatility and emotion in each performance."),
                     LocalDate.of(2024, 12, 9),
-                    1000.0,
+                    2000.0,
                     Arrays.asList("https://i.imgur.com/bK2LR4N.jpeg", "https://i.imgur.com/1PZNqe4.jpeg", "https://i.imgur.com/jxZLIdW.jpeg", "https://i.imgur.com/lGC5NLt.jpeg", "https://i.imgur.com/9Gk39MP.jpeg")
             );
             Ticket ticketEventSymphonyWaves = new Ticket(LocalDateTime.of(2024, 12, 9, 15, 0), "Symphony of the Waves 2024");
-            Stand stand5 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventSymphonyWaves.getTicketPrice());
+            Stand stand5 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30, 31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50), "small", eventSymphonyWaves.getTicketPrice());
             eventSymphonyWaves.addTicket(ticketEventSymphonyWaves);
             eventSymphonyWaves.addStand(stand5);
             pabellonTeatro.addEvent(eventSymphonyWaves);

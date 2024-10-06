@@ -44,8 +44,10 @@ public class WebConfig {
                 .authorizeHttpRequests(authorize ->
                         authorize
                                 .requestMatchers("/api/auth/login", "/api/auth/register", "/h2-console/**", "/api/event/all").permitAll()
+
                                 .requestMatchers( "/api/event/create").hasRole("ADMIN") // Solo ADMIN
                                 .requestMatchers("/api/event/**", "/api/ticket/apply", "/api/stand/apply", "/api/card/current").hasAnyRole("CLIENT", "ADMIN") // CLIENT y ADMIN
+
                                 .anyRequest().authenticated()
                 )
 

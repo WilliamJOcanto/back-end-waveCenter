@@ -253,7 +253,7 @@ public class WaveCenterApplication {
                     Arrays.asList("https://i.imgur.com/34pCyWf.jpeg", "https://i.imgur.com/8mxW3ky.jpeg", "https://i.imgur.com/UmIoF18.jpeg", "https://i.imgur.com/3F4rt8G.jpeg", "https://i.imgur.com/DP07TlH.jpeg")
             );
             Ticket ticketEventVoicesFuture = new Ticket(LocalDateTime.of(2024, 12, 5, 15, 0), "Voices of the Future Conference 2024");
-            Stand stand1 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventVoicesFuture.getTicketPrice());
+            Stand stand1 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52), "small", eventVoicesFuture.getTicketPrice());
             eventVoicesFuture.addTicket(ticketEventVoicesFuture);
             eventVoicesFuture.addStand(stand1);
             pabellonTeatro.addEvent(eventVoicesFuture);
@@ -273,7 +273,7 @@ public class WaveCenterApplication {
                     Arrays.asList("https://i.imgur.com/gM9MHXM.jpeg", "https://i.imgur.com/0cyJSyN.jpeg", "https://i.imgur.com/fCKxGVI.jpeg", "https://i.imgur.com/AQD2jkc.jpeg", "https://i.imgur.com/EzCLbXd.jpeg")
             );
             Ticket ticketEventArtStorytelling = new Ticket(LocalDateTime.of(2024, 12, 6, 15, 0), "Art Conference 2024 - The Art of Storytelling");
-            Stand stand2 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventArtStorytelling.getTicketPrice());
+            Stand stand2 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52), "small", eventArtStorytelling.getTicketPrice());
             eventArtStorytelling.addTicket(ticketEventArtStorytelling);
             eventArtStorytelling.addStand(stand2);
             pabellonTeatro.addEvent(eventArtStorytelling);
@@ -294,7 +294,7 @@ public class WaveCenterApplication {
             );
 
             Ticket ticketEventCurrentsTalks = new Ticket(LocalDateTime.of(2024, 12, 7, 15, 0), "Tech & Art Conference 2024 - Cultural Currents Talks");
-            Stand stand3 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventCurrentsTalks.getTicketPrice());
+            Stand stand3 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52), "small", eventCurrentsTalks.getTicketPrice());
             eventCurrentsTalks.addTicket(ticketEventCurrentsTalks);
             eventCurrentsTalks.addStand(stand3);
             pabellonTeatro.addEvent(eventCurrentsTalks);
@@ -314,7 +314,7 @@ public class WaveCenterApplication {
                     Arrays.asList("https://i.imgur.com/SpYpKI0.jpeg", "https://i.imgur.com/X4hzUJ0.jpeg", "https://i.imgur.com/RSln6xk.jpeg", "https://i.imgur.com/V2XmC5A.jpeg", "https://i.imgur.com/kq62r5U.jpeg")
             );
             Ticket ticketEventMoonlitShow = new Ticket(LocalDateTime.of(2024, 12, 8, 15, 0), "Theater performances - The Moonlit Show");
-            Stand stand4 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventMoonlitShow.getTicketPrice());
+            Stand stand4 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52), "small", eventMoonlitShow.getTicketPrice());
             eventMoonlitShow.addTicket(ticketEventMoonlitShow);
             eventMoonlitShow.addStand(stand4);
             pabellonTeatro.addEvent(eventMoonlitShow);

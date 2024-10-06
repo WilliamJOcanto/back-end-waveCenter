@@ -334,7 +334,7 @@ public class WaveCenterApplication {
                     Arrays.asList("https://i.imgur.com/bK2LR4N.jpeg", "https://i.imgur.com/1PZNqe4.jpeg", "https://i.imgur.com/jxZLIdW.jpeg", "https://i.imgur.com/lGC5NLt.jpeg", "https://i.imgur.com/9Gk39MP.jpeg")
             );
             Ticket ticketEventSymphonyWaves = new Ticket(LocalDateTime.of(2024, 12, 9, 15, 0), "Symphony of the Waves 2024");
-            Stand stand5 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30), "small", eventSymphonyWaves.getTicketPrice());
+            Stand stand5 = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52), "small", eventSymphonyWaves.getTicketPrice());
             eventSymphonyWaves.addTicket(ticketEventSymphonyWaves);
             eventSymphonyWaves.addStand(stand5);
             pabellonTeatro.addEvent(eventSymphonyWaves);

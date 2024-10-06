@@ -42,12 +42,28 @@ public class StandServicesImpl implements StandServices {
     private StandRepository standRepository;
 
     @Override
+    public String requestValidator(RentStandApliDTO rentStandApliDTO, Event event) {
+        if(event.getPlace().getId() == 1 && rentStandApliDTO.name().isBlank()){
+            return "The name stand field must not be empty";
+        }
+        if(event.getPlace().getId() == 1 && rentStandApliDTO.description().isBlank()){
+            return "The description stand field must not be empty";
+        }
+        if(rentStandApliDTO.positions() == null){
+            return "You must select at least one position";
+        }
+        return null;
+    }
+
+    @Override
     public ResponseEntity<?> rentStand(RentStandApliDTO rentStandApliDTO, Authentication authentication) {
-
-
 
         Client client = clientRepository.findByEmail(authentication.getName());
         Event event = eventRepository.findById(rentStandApliDTO.enventId());
+
+        if(requestValidator(rentStandApliDTO, event) != null){
+            return new ResponseEntity<>(requestValidator(rentStandApliDTO, event), HttpStatus.BAD_REQUEST);
+        }
 
         List<Stand> stands = event.getStands().stream()
                 .filter(stand -> stand.getLocations().stream().anyMatch(location -> rentStandApliDTO.positions().contains(location)))

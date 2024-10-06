@@ -30,7 +30,6 @@ public class AuthController {
     public ResponseEntity<?> register(@RequestBody RegisterDTO registerDTO) {
         return authServices.register(registerDTO);
     }
-
     @GetMapping("/current")
     public ResponseEntity<?> getClient(Authentication authentication) {
         return ResponseEntity.ok(new ClientDTO(clientRepository.findByEmail(authentication.getName())));

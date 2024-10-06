@@ -102,6 +102,12 @@ public class EventServicesImpl implements EventServices {
         if(placeIdFieldValidator(createEventDTO.placeId())){
             return new ResponseEntity<>("The place field must not be empty", HttpStatus.FORBIDDEN);
         }
+        if(eventRepository.existsByDateAndPlace_Id(createEventDTO.date(), createEventDTO.placeId()) && eventRepository.existsByName(createEventDTO.name())){
+            return new ResponseEntity<>("This type of event already exists for the selected date and place", HttpStatus.FORBIDDEN);
+        }
+        if(createEventDTO.date().isBefore(LocalDate.now())){
+            return new ResponseEntity<>("The date entered has expired", HttpStatus.FORBIDDEN);
+        }
         return null;
     }
 
@@ -124,7 +130,7 @@ public class EventServicesImpl implements EventServices {
         placeRepository.save(place);
 
         if(createEventDTO.placeId() == 1){
-            Stand smallStand = new Stand(Arrays.asList(11,12,13,14,15,16,17,18,19,20,21,22,23,42,25,26,27,28,29,30), "small", 5000.0);
+            Stand smallStand = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30, 31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50), "small", 5000.0);
             Stand bigStand = new Stand(Arrays.asList(1,2,3,4,5,6,7,8,9,10), "big", 10000.0);
 
             smallStand.setEvent(event);

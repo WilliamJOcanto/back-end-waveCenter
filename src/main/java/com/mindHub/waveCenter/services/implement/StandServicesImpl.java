@@ -1,15 +1,10 @@
 package com.mindHub.waveCenter.services.implement;
 
+import com.mindHub.waveCenter.DTO.OrderTicketDTO;
 import com.mindHub.waveCenter.DTO.RentStandApliDTO;
 import com.mindHub.waveCenter.DTO.RentStandDTO;
-import com.mindHub.waveCenter.models.Client;
-import com.mindHub.waveCenter.models.Event;
-import com.mindHub.waveCenter.models.RentStand;
-import com.mindHub.waveCenter.models.Stand;
-import com.mindHub.waveCenter.repositories.ClientRepository;
-import com.mindHub.waveCenter.repositories.EventRepository;
-import com.mindHub.waveCenter.repositories.RentStandRepository;
-import com.mindHub.waveCenter.repositories.StandRepository;
+import com.mindHub.waveCenter.models.*;
+import com.mindHub.waveCenter.repositories.*;
 import com.mindHub.waveCenter.services.StandServices;
 import com.mindHub.waveCenter.utils.GenerateHasCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +36,9 @@ public class StandServicesImpl implements StandServices {
     @Autowired
     private StandRepository standRepository;
 
+    @Autowired
+    private OrderTicketRepository orderTicketRepository;
+
     @Override
     public String requestValidator(RentStandApliDTO rentStandApliDTO, Event event) {
         if(event.getPlace().getId() == 1 && rentStandApliDTO.name().isBlank()){
@@ -69,18 +67,25 @@ public class StandServicesImpl implements StandServices {
                 .filter(stand -> stand.getLocations().stream().anyMatch(location -> rentStandApliDTO.positions().contains(location)))
                 .toList();
 
-        if(stands.size() == 1 && event.getPlace().getId() == 3){
+        System.out.println("hola");
+        if(event.getPlace().getId() == 3){
+            System.out.println("Hola");
             Stand stand = stands.get(0);
             stand.getLocations().removeAll(rentStandApliDTO.positions());
 
-            RentStand rentStand = new RentStand(event.getName(), " ", generateHasCode.generateHashCodeRentStand(), rentStandApliDTO.positions(), LocalDateTime.now());
-            stand.addRentStand(rentStand);
-            client.addRentStand(rentStand);
-            rentStandRepository.save(rentStand);
+            List<Ticket> ticket = event.getTickets();
+            Ticket ticket1 = ticket.get(0);
+            OrderTicket orderTicket = new OrderTicket(LocalDateTime.now(),rentStandApliDTO.positions().size(), generateHasCode.generateHashCodeOrderTicket());
+//            RentStand rentStand = new RentStand(event.getName(), " ", generateHasCode.generateHashCodeRentStand(), rentStandApliDTO.positions(), LocalDateTime.now());
+//            stand.addRentStand(rentStand);
+            ticket1.addOrderTicket(orderTicket);
+            client.addOrderTicket(orderTicket);
+//            rentStandRepository.save(rentStand);
+            orderTicketRepository.save(orderTicket);
             standRepository.save(stand);
             clientRepository.save(client);
 
-            return new ResponseEntity<>(new RentStandDTO(rentStand), HttpStatus.OK);
+            return new ResponseEntity<>(new OrderTicketDTO(orderTicket), HttpStatus.OK);
         }
 
         if(stands.size() == 1){

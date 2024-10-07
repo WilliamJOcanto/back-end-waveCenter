@@ -367,22 +367,22 @@ public class WaveCenterApplication {
             cardsRepository.save(card1);
             clientRepository.save(ludwing);
 
-
-            Place salaDeConvenciones = new Place("Sunset Beach", 10, 200, "A beautiful beach for concerts and events.");
-            placeRepository.save(salaDeConvenciones);
+//
+//            Place salaDeConvenciones = new Place("Sunset Beach", 10, 200, "A beautiful beach for concerts and events.");
+//            placeRepository.save(salaDeConvenciones);
 
             // Crear evento
 
 
             // Cliente renta un stand
-            RentStand rentStand1 = new RentStand("Stand 1", "Beach VIP Stand", generateHasCode.generateHashCodeRentStand(), Arrays.asList(1, 2), LocalDateTime.now());
-            ludwing.addRentStand(rentStand1);
-            rentStandRepository.save(rentStand1);
+//            RentStand rentStand1 = new RentStand("Stand 1", "Beach VIP Stand", generateHasCode.generateHashCodeRentStand(), Arrays.asList(1, 2), LocalDateTime.now());
+//            ludwing.addRentStand(rentStand1);
+//            rentStandRepository.save(rentStand1);
 
             // Imprimir detalles del pedido
 
             // Crear segundo cliente
-            Client ana = new Client("Ana", "Gomez", "ana.gomez@example.com", passwordEncoder.encode("abc123"));
+            Client ana = new Client("Ana", "Gomez", "ana@admin.com", passwordEncoder.encode("abc123"));
             clientRepository.save(ana);
 
             // Crear tarjeta para el segundo cliente
@@ -396,9 +396,9 @@ public class WaveCenterApplication {
             orderTicketRepository.save(orderTicket2);
 
             // Cliente renta un stand
-            RentStand rentStand2 = new RentStand("Stand 2", "Beach Standard Stand", generateHasCode.generateHashCodeRentStand(), Arrays.asList(2, 3, 4), LocalDateTime.now());
-            ana.addRentStand(rentStand2);
-            rentStandRepository.save(rentStand2);
+//            RentStand rentStand2 = new RentStand("Stand 2", "Beach Standard Stand", generateHasCode.generateHashCodeRentStand(), Arrays.asList(2, 3, 4), LocalDateTime.now());
+//            ana.addRentStand(rentStand2);
+//            rentStandRepository.save(rentStand2);
 
             // Imprimir detalles del pedido para el segundo cliente
 

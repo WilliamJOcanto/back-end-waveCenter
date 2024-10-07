@@ -19,6 +19,8 @@ public class RentStandDTO {
 
     private StandDTO standDTO;
 
+    private String eventName;
+
     public RentStandDTO(RentStand rentStand) {
         this.id = rentStand.getId();
         this.name = rentStand.getName();
@@ -26,7 +28,7 @@ public class RentStandDTO {
         this.hashCode = rentStand.getHashCode();
         this.rentedPositions = rentStand.getRentedPositions();
         this.renDate = rentStand.getRentDate();
-
+        this.eventName = rentStand.getStand().getEvent().getName();
     }
 
     public long getId() {
@@ -53,4 +55,7 @@ public class RentStandDTO {
         return renDate;
     }
 
+    public String getEventName() {
+        return eventName;
+    }
 }

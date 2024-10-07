@@ -114,10 +114,10 @@ public class EventServicesImpl implements EventServices {
     @Override
     public ResponseEntity<?> makeNewEvent(CreateEventDTO createEventDTO) {
 
-//        ResponseEntity<?> responseValidator = requestValidator(createEventDTO);
-//        if(responseValidator != null){
-//            return responseValidator;
-//        }
+        ResponseEntity<?> responseValidator = requestValidator(createEventDTO);
+        if(responseValidator != null){
+            return responseValidator;
+        }
 
         Place place = getPlaceById(createEventDTO.placeId());
         Event event = new Event(createEventDTO.name(), createEventDTO.description(), createEventDTO.artists(), createEventDTO.date(), createEventDTO.ticketPrice(), createEventDTO.images());

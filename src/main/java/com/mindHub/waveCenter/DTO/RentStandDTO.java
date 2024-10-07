@@ -2,11 +2,14 @@ package com.mindHub.waveCenter.DTO;
 
 import com.mindHub.waveCenter.models.Client;
 import com.mindHub.waveCenter.models.RentStand;
+import com.mindHub.waveCenter.models.Stand;
+import com.mindHub.waveCenter.models.Ticket;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RentStandDTO {
     private long id;
@@ -19,6 +22,10 @@ public class RentStandDTO {
 
     private StandDTO standDTO;
 
+    private String eventName;
+
+    private LocalDateTime date;
+
     public RentStandDTO(RentStand rentStand) {
         this.id = rentStand.getId();
         this.name = rentStand.getName();
@@ -26,8 +33,13 @@ public class RentStandDTO {
         this.hashCode = rentStand.getHashCode();
         this.rentedPositions = rentStand.getRentedPositions();
         this.renDate = rentStand.getRentDate();
-
+        this.eventName = rentStand.getStand().getEvent().getName();
+        this.date = rentStand.getStand().getEvent().getTickets().stream()
+                .map(Ticket::getPurchaseDate)
+                .findFirst()
+                .orElse(null);
     }
+
 
     public long getId() {
         return id;
@@ -53,4 +65,11 @@ public class RentStandDTO {
         return renDate;
     }
 
+    public String getEventName() {
+        return eventName;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
 }

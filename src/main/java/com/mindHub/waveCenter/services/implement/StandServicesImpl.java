@@ -80,6 +80,7 @@ public class StandServicesImpl implements StandServices {
 //            stand.addRentStand(rentStand);
             ticket1.addOrderTicket(orderTicket);
             client.addOrderTicket(orderTicket);
+            orderTicket.addPositions(rentStandApliDTO.positions());
 //            rentStandRepository.save(rentStand);
             orderTicketRepository.save(orderTicket);
             standRepository.save(stand);

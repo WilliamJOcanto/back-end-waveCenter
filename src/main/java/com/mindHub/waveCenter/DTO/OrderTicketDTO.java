@@ -20,6 +20,8 @@ public class OrderTicketDTO {
 
     private long eventId;
 
+    private List<Integer> positions = new ArrayList<>();
+
     public OrderTicketDTO(OrderTicket orderTicket) {
         this.id = orderTicket.getId();
         this.purchaseDate = orderTicket.getPurchaseDate();
@@ -27,6 +29,7 @@ public class OrderTicketDTO {
         this.hashCode = orderTicket.getHashCode();
         this.event = orderTicket.getTicket().getEventName();
         this.eventId = orderTicket.getTicket().getEvent().getId();
+        this.positions = orderTicket.getPositions();
     }
 
     public long getId() {
@@ -51,5 +54,9 @@ public class OrderTicketDTO {
 
     public long getEventId() {
         return eventId;
+    }
+
+    public List<Integer> getPositions() {
+        return positions;
     }
 }

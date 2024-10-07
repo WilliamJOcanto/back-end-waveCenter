@@ -15,6 +15,7 @@ public class OrderTicket {
     private LocalDateTime purchaseDate;
     private int quantity;
     private String hashCode;
+    private List<Integer> positions = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "client_id")
@@ -80,6 +81,18 @@ public class OrderTicket {
 
     public void setTicket(Ticket ticket) {
         this.ticket = ticket;
+    }
+
+    public List<Integer> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(List<Integer> positions) {
+        this.positions = positions;
+    }
+
+    public void addPositions(List<Integer> positions){
+        this.positions = positions;
     }
 
     @Override

@@ -33,11 +33,17 @@ public class RentStandDTO {
         this.hashCode = rentStand.getHashCode();
         this.rentedPositions = rentStand.getRentedPositions();
         this.renDate = rentStand.getRentDate();
-        this.eventName = rentStand.getStand().getEvent().getName();
-        this.date = rentStand.getStand().getEvent().getTickets().stream()
-                .map(Ticket::getPurchaseDate)
-                .findFirst()
-                .orElse(null);
+        // Validación para asegurarte de que el stand no sea null
+        if (rentStand.getStand() != null) {
+            this.eventName = rentStand.getStand().getEvent().getName();
+            this.date = rentStand.getStand().getEvent().getTickets().stream()
+                    .map(Ticket::getPurchaseDate)
+                    .findFirst()
+                    .orElse(null);
+        } else {
+            this.eventName = null; // O establece un valor por defecto
+            this.date = null; // O establece un valor por defecto
+        }
     }
 
 

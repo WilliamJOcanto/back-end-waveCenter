@@ -16,7 +16,7 @@ public class CorsConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(Arrays.asList(new String[]{"http://localhost:8080","http://localhost:5174", "http://localhost:5173"}));
+        configuration.setAllowedOrigins(Arrays.asList(new String[]{"http://localhost:8080","http://localhost:5174", "http://localhost:5173","https://passwave.onrender.com"}));
 
         configuration.setAllowedMethods(Arrays.asList(new String[]{"GET", "POST", "PUT", "DELETE"}));
 
